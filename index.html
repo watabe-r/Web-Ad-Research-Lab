@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>審査突破の専門家 | 規制業界特化 Meta広告代理店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:ital,wght@0,400;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --black:      #0a0a0a;
+      --dark:       #141414;
+      --dark2:      #1c1c1c;
+      --red:        #e60000;
+      --red-dark:   #a00000;
+      --orange:     #ff6a00;
+      --yellow:     #ffd700;
+      --white:      #ffffff;
+      --gray:       #888888;
+      --gray-dim:   rgba(255,255,255,0.55);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== HAZARD TAPE ===== */
+    .hazard-tape {
+      height: 38px;
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--yellow) 0px,
+        var(--yellow) 22px,
+        #111 22px,
+        #111 44px
+      );
+      flex-shrink: 0;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 200;
+      background: rgba(10, 10, 10, 0.94);
+      border-bottom: 3px solid var(--red);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.375rem;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .logo span { color: var(--red); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: var(--red);
+      color: var(--white);
+      font-weight: 900;
+      font-style: italic;
+      font-size: 0.875rem;
+      text-decoration: none;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--orange);
+      transform: translateX(2px);
+    }
+
+    /* ===== HERO / FV ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 120px 24px 80px;
+      background: var(--black);
+    }
+
+    /* Concentration lines from top-right */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-conic-gradient(
+        from 0deg at 72% 35%,
+        rgba(230, 0, 0, 0.09) 0deg 3deg,
+        transparent 3deg 13deg
+      );
+      pointer-events: none;
+    }
+
+    /* Red glow orb */
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 640px;
+      height: 640px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(230,0,0,0.22) 0%, transparent 70%);
+      top: 10%;
+      right: 5%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      font-style: italic;
+      padding: 5px 18px;
+      margin-bottom: 22px;
+      clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(1.5rem, 3vw, 2.125rem);
+      font-weight: 900;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 14px;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-shout-outline {
+      display: block;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      font-weight: 900;
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 3px var(--red);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      text-shadow: 5px 5px 0 rgba(180,0,0,0.3);
+      margin-bottom: 4px;
+    }
+
+    .hero-shout-fill {
+      display: block;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--red);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      text-shadow: 4px 4px 0 #700000;
+      margin-bottom: 28px;
+    }
+
+    .hero-sub {
+      font-size: 1.0625rem;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 40px;
+      line-height: 1.95;
+      border-left: 4px solid var(--yellow);
+      padding-left: 18px;
+    }
+
+    .hero-sub strong { color: var(--yellow); }
+
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 44px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--orange) 100%);
+      color: var(--white);
+      font-size: 1.125rem;
+      font-weight: 900;
+      font-style: italic;
+      text-decoration: none;
+      clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%);
+      box-shadow: 6px 6px 0 rgba(0,0,0,0.6);
+      transition: all 0.25s;
+    }
+
+    .btn-hero:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 10px 10px 0 rgba(0,0,0,0.7);
+    }
+
+    .hero-note {
+      margin-top: 14px;
+      font-size: 0.8125rem;
+      color: var(--gray);
+    }
+
+    /* Hero illustration */
+    .hero-illus-box {
+      background: linear-gradient(145deg, #1a0000, #300000);
+      border: 3px solid var(--red);
+      border-radius: 4px;
+      padding: 36px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(230,0,0,0.35), inset 0 0 60px rgba(230,0,0,0.08);
+    }
+
+    .hero-illus-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-conic-gradient(
+        from 0deg at 50% 50%,
+        rgba(230,0,0,0.12) 0deg 4deg,
+        transparent 4deg 18deg
+      );
+      pointer-events: none;
+    }
+
+    .illus-content { position: relative; z-index: 1; }
+
+    .illus-screen {
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      text-align: left;
+      position: relative;
+    }
+
+    .illus-screen-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .illus-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .illus-dot.r { background: #ff5f57; }
+    .illus-dot.y { background: #ffbd2e; }
+    .illus-dot.g { background: #28ca41; }
+
+    .illus-screen-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 8px;
+    }
+
+    .illus-screen-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 8px;
+    }
+
+    .illus-screen-status {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    /* Big X overlay */
+    .illus-big-x {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-15deg);
+      font-size: 7rem;
+      font-weight: 900;
+      color: rgba(230, 0, 0, 0.65);
+      line-height: 1;
+      pointer-events: none;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+    }
+
+    .illus-cry {
+      font-size: 1.375rem;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--yellow);
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.6);
+      -webkit-text-stroke: 0.5px rgba(255,200,0,0.4);
+      line-height: 1.4;
+    }
+
+    /* ===== SECTION COMMONS ===== */
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 14px;
+    }
+
+    /* ===== PROBLEM SECTION ===== */
+    .problem {
+      padding: 100px 24px;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* SVG noise texture */
+    .problem::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .problem-headline {
+      margin-bottom: 56px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .problem-headline h2 {
+      font-size: clamp(1.875rem, 4vw, 3rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .problem-headline h2 .accent { color: var(--red); }
+
+    .problem-headline p {
+      font-size: 1.0625rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 640px;
+      line-height: 1.9;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .problem-card {
+      background: rgba(255,255,255,0.032);
+      border: 1px solid rgba(230,0,0,0.22);
+      border-radius: 3px;
+      padding: 28px 22px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .problem-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--orange));
+    }
+
+    .problem-card:hover {
+      border-color: rgba(230,0,0,0.6);
+      background: rgba(230,0,0,0.06);
+      transform: translateY(-3px);
+    }
+
+    .problem-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .problem-card h3 {
+      font-size: 1.0625rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .problem-card p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.85;
+    }
+
+    .problem-x {
+      position: absolute;
+      bottom: 14px;
+      right: 18px;
+      font-size: 1.375rem;
+      font-weight: 900;
+      color: rgba(230,0,0,0.35);
+    }
+
+    /* ===== SOLUTION SECTION ===== */
+    .solution {
+      padding: 100px 24px;
+      background: #0d0d0d;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solution::before {
+      content: '';
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,100,0,0.1) 0%, transparent 70%);
+      top: -300px;
+      right: -300px;
+      pointer-events: none;
+    }
+
+    .solution::after {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,200,0,0.07) 0%, transparent 70%);
+      bottom: -200px;
+      left: -100px;
+      pointer-events: none;
+    }
+
+    .deco-explosion {
+      position: absolute;
+      font-size: 9rem;
+      opacity: 0.06;
+      color: var(--orange);
+      right: 4%;
+      top: 8%;
+      transform: rotate(20deg);
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .solution-headline {
+      text-align: center;
+      margin-bottom: 72px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .breakthrough-badge {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--orange), var(--yellow));
+      color: var(--black);
+      font-size: 0.8125rem;
+      font-weight: 900;
+      font-style: italic;
+      padding: 6px 22px;
+      margin-bottom: 22px;
+      letter-spacing: 0.07em;
+      clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+    }
+
+    .solution-headline h2 {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 22px;
+    }
+
+    .solution-headline h2 .line-orange { color: var(--orange); }
+    .solution-headline h2 .line-yellow { color: var(--yellow); }
+
+    .solution-headline p {
+      font-size: 1.0625rem;
+      color: rgba(255,255,255,0.68);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.9;
+    }
+
+    .solution-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .solution-card {
+      background: linear-gradient(145deg, rgba(255,100,0,0.055) 0%, rgba(255,200,0,0.03) 100%);
+      border: 1px solid rgba(255,100,0,0.28);
+      border-radius: 3px;
+      padding: 32px 24px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .solution-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--yellow));
+    }
+
+    .solution-card:hover {
+      border-color: rgba(255,100,0,0.6);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(255,100,0,0.18);
+    }
+
+    .solution-num {
+      font-size: 3rem;
+      font-weight: 900;
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(255,100,0,0.38);
+      line-height: 1;
+      margin-bottom: 14px;
+      letter-spacing: -0.04em;
+    }
+
+    .solution-card h3 {
+      font-size: 1.125rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .solution-card h3 span { color: var(--yellow); }
+
+    .solution-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.9;
+    }
+
+    /* ===== RESULTS SECTION ===== */
+    .results {
+      padding: 100px 24px;
+      background: var(--black);
+    }
+
+    .results-headline {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .gold-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--yellow);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .gold-eyebrow::before,
+    .gold-eyebrow::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--yellow), transparent);
+    }
+
+    .results-headline h2 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .results-headline h2 .gold {
+      background: linear-gradient(135deg, var(--yellow) 0%, #ff9500 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .results-headline p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.58);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.85;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: rgba(255,200,0,0.18);
+      border: 2px solid rgba(255,200,0,0.35);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 56px;
+    }
+
+    .stat-box {
+      background: var(--black);
+      padding: 36px 16px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--yellow) 0%, #ff9500 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-unit {
+      font-size: 0.5em;
+      font-style: normal;
+    }
+
+    .stat-label {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.58);
+      font-weight: 500;
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .case-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,200,0,0.18);
+      border-radius: 3px;
+      padding: 28px 24px 28px 32px;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .case-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--yellow), var(--orange));
+    }
+
+    .case-card:hover {
+      border-color: rgba(255,200,0,0.4);
+      background: rgba(255,200,0,0.035);
+    }
+
+    .case-tag {
+      display: inline-block;
+      background: rgba(255,200,0,0.12);
+      color: var(--yellow);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border: 1px solid rgba(255,200,0,0.28);
+      border-radius: 2px;
+      margin-bottom: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    .case-card h3 {
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .case-card p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.85;
+    }
+
+    .case-result {
+      margin-top: 16px;
+      font-size: 1.0625rem;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--yellow);
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta {
+      padding: 100px 24px;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-conic-gradient(
+        from 0deg at 50% 110%,
+        rgba(230,0,0,0.07) 0deg 3deg,
+        transparent 3deg 11deg
+      );
+      pointer-events: none;
+    }
+
+    .cta::after {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(230,0,0,0.14) 0%, transparent 70%);
+      bottom: -300px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta-eyebrow {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+
+    .cta-inner h2 {
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .cta-inner h2 .highlight { color: var(--yellow); }
+
+    .cta-sub {
+      font-size: 1.0625rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.95;
+      margin-bottom: 52px;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 22px 56px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--orange) 100%);
+      color: var(--white);
+      font-size: 1.125rem;
+      font-weight: 900;
+      font-style: italic;
+      text-decoration: none;
+      clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%);
+      box-shadow: 0 8px 36px rgba(230,0,0,0.5), 0 0 0 4px rgba(230,0,0,0.18);
+      transition: all 0.25s;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 56px rgba(230,0,0,0.6), 0 0 0 6px rgba(230,0,0,0.25);
+    }
+
+    .cta-notes {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .cta-note-item {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.52);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cta-note-item::before {
+      content: '✓';
+      color: var(--yellow);
+      font-weight: 900;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--black);
+      padding: 56px 24px 36px;
+      border-top: 3px solid var(--red);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-logo {
+      font-size: 1.375rem;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+
+    .footer-logo span { color: var(--red); }
+
+    .footer-brand p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.48);
+      line-height: 1.8;
+    }
+
+    .footer-col h4 {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.48);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover { color: var(--white); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.38);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-sub {
+        text-align: left;
+      }
+
+      .hero-illus-box {
+        max-width: 440px;
+        margin: 0 auto;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .stats-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .btn-cta {
+        padding: 18px 36px;
+        font-size: 1rem;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cta-notes {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HAZARD TAPE TOP -->
+  <div class="hazard-tape"></div>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="nav">
+      <a href="#" class="logo">BREAK<span>THROUGH</span></a>
+      <a href="#cta" class="nav-cta">無料診断を受ける ▶</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO / FV ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <!-- LEFT: Text -->
+      <div class="hero-text">
+        <span class="hero-kicker">規制業界特化 Meta広告代理店</span>
+        <h1>また審査落ち？<br>その『諦め』…</h1>
+        <span class="hero-shout-outline">ちょっと</span>
+        <span class="hero-shout-fill">待った!!</span>
+        <p class="hero-sub">
+          業界のタブーを突破する。<br>
+          <strong>風俗・アダルト・金融・美容クリニック・オンラインカジノ</strong>に特化した<br>
+          Meta広告運用のプロ集団が、あなたの集客を変えます。
+        </p>
+        <a href="#cta" class="btn-hero">
+          まずは無料で突破の可能性を診断する ▶
+        </a>
+        <p class="hero-note">※ 完全無料・診断時間5分・強引な営業一切なし</p>
+      </div>
+
+      <!-- RIGHT: Illustration -->
+      <div class="hero-illus">
+        <div class="hero-illus-box">
+          <div class="illus-content">
+            <div class="illus-screen">
+              <div class="illus-screen-bar">
+                <span class="illus-dot r"></span>
+                <span class="illus-dot y"></span>
+                <span class="illus-dot g"></span>
+              </div>
+              <div class="illus-screen-label">Meta Business Suite — 広告審査結果</div>
+              <div class="illus-screen-title">キャンペーン：〇〇プロモーション</div>
+              <div class="illus-screen-status">⛔ 審査不合格 — ポリシー違反の疑い</div>
+              <div class="illus-big-x">✕</div>
+            </div>
+            <div class="illus-cry">
+              もう無理？<br>——いいえ、まだです。
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HAZARD TAPE -->
+  <div class="hazard-tape"></div>
+
+  <!-- ===== PROBLEM SECTION ===== -->
+  <section class="problem">
+    <div class="section-inner">
+      <div class="problem-headline">
+        <p class="section-eyebrow">Problem</p>
+        <h2>
+          「もう、まともな集客は<br>
+          <span class="accent">できない」</span>と<br>
+          絶望していませんか？
+        </h2>
+        <p>
+          アカウントBAN、何度繰り返しても通らない審査、頼れる代理店が見つからない——。<br>
+          規制が厳しい業界だからこそ、集客の壁は何倍にも高い。
+        </p>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <span class="problem-icon">🚫</span>
+          <h3>何度申請しても審査落ち</h3>
+          <p>クリエイティブを変えても、コピーを修正しても、返ってくるのは「審査不合格」の通知だけ。もはや何が問題なのかすらわからない。</p>
+          <span class="problem-x">✕</span>
+        </div>
+        <div class="problem-card">
+          <span class="problem-icon">💀</span>
+          <h3>突然のアカウントBAN</h3>
+          <p>育ててきた広告アカウントが突然停止。積み上げたデータも、実績も、すべて水の泡。再起動のたびに一からやり直し。</p>
+          <span class="problem-x">✕</span>
+        </div>
+        <div class="problem-card">
+          <span class="problem-icon">🤷</span>
+          <h3>頼れる代理店が見つからない</h3>
+          <p>「うちでは取り扱えない業種です」——何社に断られましたか？業界特有のノウハウを持つ代理店は、極めて少ない。</p>
+          <span class="problem-x">✕</span>
+        </div>
+        <div class="problem-card">
+          <span class="problem-icon">📉</span>
+          <h3>競合だけが伸び続ける</h3>
+          <p>自社が悩んでいる間にも、ノウハウを持つ競合は広告を回し続け、どんどん差が広がっていく。このままでは手遅れになる。</p>
+          <span class="problem-x">✕</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAZARD TAPE -->
+  <div class="hazard-tape"></div>
+
+  <!-- ===== SOLUTION SECTION ===== -->
+  <section class="solution" id="solution">
+    <div class="deco-explosion">💥</div>
+    <div class="section-inner">
+
+      <div class="solution-headline">
+        <div class="breakthrough-badge">Solution — 突破口</div>
+        <h2>
+          <span class="line-orange">他社でNGだった広告が、</span><br>
+          <span class="line-yellow">なぜ当社なら通るのか？</span>
+        </h2>
+        <p>
+          私たちは「規制業界の広告運用」だけに特化してきました。<br>
+          蓄積してきた突破ノウハウで、あなたの広告を生かします。
+        </p>
+      </div>
+
+      <div class="solution-cards">
+        <div class="solution-card">
+          <div class="solution-num">01</div>
+          <h3>ポリシーの<span>盲点</span>を突くクリエイティブ</h3>
+          <p>表現の工夫、LPの構成、クリエイティブの最適化。Metaポリシーの審査基準を熟知した設計で、ギリギリのラインを突破します。</p>
+        </div>
+        <div class="solution-card">
+          <div class="solution-num">02</div>
+          <h3>規制業界<span>専用</span>のアカウント戦略</h3>
+          <p>どのアカウント構造がBANリスクを最小化するか。複数アカウントの運用、リスク分散の設計など、独自の運用ノウハウを提供します。</p>
+        </div>
+        <div class="solution-card">
+          <div class="solution-num">03</div>
+          <h3>業界<span>特化</span>の実績と独自ネットワーク</h3>
+          <p>積み上げてきた審査通過実績と業界ネットワーク。一般代理店にはできない対応力で、あなたの広告を動かし続けます。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HAZARD TAPE -->
+  <div class="hazard-tape"></div>
+
+  <!-- ===== RESULTS SECTION ===== -->
+  <section class="results" id="results">
+    <div class="section-inner">
+
+      <div class="results-headline">
+        <div class="gold-eyebrow">Track Record</div>
+        <h2>
+          審査通過率<span class="gold">92%</span>！<br>
+          「不可能」を「可能」に変えた実績
+        </h2>
+        <p>
+          他社に断られた案件も、当社では多くが解決しています。<br>
+          数字で見る、圧倒的な突破力。
+        </p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-num">92<span class="stat-unit">%</span></div>
+          <div class="stat-label">審査通過率</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">200<span class="stat-unit">+</span></div>
+          <div class="stat-label">規制業界の支援実績</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">48<span class="stat-unit">h</span></div>
+          <div class="stat-label">平均初稿提出時間</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">5<span class="stat-unit">年</span></div>
+          <div class="stat-label">規制業界特化の実績</div>
+        </div>
+      </div>
+
+      <div class="cases-grid">
+        <div class="case-card">
+          <span class="case-tag">美容クリニック</span>
+          <h3>医療広告ガイドラインに抵触しない形でのMeta広告設計</h3>
+          <p>他の5社に断られた案件を引き受け、クリエイティブとLPを全面改修。3週間で配信を実現しました。</p>
+          <div class="case-result">→ 月間問い合わせ 3倍増</div>
+        </div>
+        <div class="case-card">
+          <span class="case-tag">金融（ローン系）</span>
+          <h3>金融商品の広告規制をクリアした訴求軸の設計</h3>
+          <p>審査通過が困難な金融商品について、表現の工夫とアカウント戦略で突破。ROASも大幅改善を達成しました。</p>
+          <div class="case-result">→ ROAS 280% 達成</div>
+        </div>
+        <div class="case-card">
+          <span class="case-tag">アダルト周辺</span>
+          <h3>合法的な範囲での広告配信スキームの構築</h3>
+          <p>法律顧問と連携しながら、配信可能な表現・媒体を精査。継続的な運用体制を構築しました。</p>
+          <div class="case-result">→ 安定した長期配信を実現</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HAZARD TAPE -->
+  <div class="hazard-tape"></div>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta" id="cta">
+    <div class="cta-inner">
+      <p class="cta-eyebrow">Free Consultation</p>
+      <h2>
+        まずは無料で、<br>
+        <span class="highlight">「突破の可能性」</span>を<br>
+        診断してみませんか？
+      </h2>
+      <p class="cta-sub">
+        現在の状況（業種・広告内容・過去の審査状況）をヒアリングし、<br>
+        当社で対応可能かどうかを無料でお答えします。<br>
+        強引な営業は一切ありません。まずはお気軽にどうぞ。
+      </p>
+      <a href="#" class="btn-cta">
+        ▶ まずは無料で、突破の可能性を診断する
+      </a>
+      <div class="cta-notes">
+        <span class="cta-note-item">完全無料</span>
+        <span class="cta-note-item">診断時間 約5分</span>
+        <span class="cta-note-item">強引な営業なし</span>
+        <span class="cta-note-item">秘密厳守</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAZARD TAPE -->
+  <div class="hazard-tape"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">BREAK<span>THROUGH</span></div>
+        <p>規制業界に特化したMeta広告代理店。業界のタブーを突破し、あなたのビジネスに集客をもたらします。</p>
+      </div>
+      <div class="footer-col">
+        <h4>対応業種</h4>
+        <ul>
+          <li><a href="#">風俗・ナイトレジャー</a></li>
+          <li><a href="#">アダルト周辺コンテンツ</a></li>
+          <li><a href="#">金融・ローン</a></li>
+          <li><a href="#">美容クリニック・医療</a></li>
+          <li><a href="#">オンラインカジノ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="#">Meta広告運用代行</a></li>
+          <li><a href="#">クリエイティブ制作</a></li>
+          <li><a href="#">審査突破コンサル</a></li>
+          <li><a href="#">LP制作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>会社情報</h4>
+        <ul>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">実績・事例</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BREAKTHROUGH Inc. All rights reserved.</p>
+      <p>本サービスは合法的な範囲での広告運用支援のみを行います。</p>
+    </div>
+  </footer>
+
+</body>
+</html>
